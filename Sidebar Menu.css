@@ -23,7 +23,64 @@ html{
     height: 100vh;
     background-color: var(--main-bg-color);
     position: fixed;
+    left: -16.5vw;
     padding: 2rem 1rem;
+    z-index: 100;
+    /* box-sizing: border-box;  */
+}
+
+.change .sidebar{
+    left: 0;
+    transition: all .5s;
+}
+
+.hamburger-menu{
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: black;
+    position: absolute;
+    top: 1rem;
+    left: 25rem;
+    right: -3.5rem;
+    /* padding: .5rem; */
+    box-sizing: border-box;
+}
+
+.line{
+    width: 2.5rem;
+    height: .5rem;
+    background-color: var(--secondary-color);
+    position: absolute;
+    border-radius: 1rem;
+    transform-origin: left;
+    transition: all .2s;
+}
+
+.line-1{
+    top: .5rem;
+    left: .5rem;
+}
+.line-2{
+    top: 1.5rem;
+    left: .5rem;
+}
+.line-3{
+    top: 2.5rem;
+    left: .5rem;
+}
+
+.change .line-1{
+    top: .5rem;
+    left: -.7rem;
+    transform: rotate(-45deg) translateY(2.5rem);
+}
+.change .line-2{
+    opacity: 0;
+}
+.change .line-3{
+    top: 2.2rem;
+    left: -.7rem;
+    transform: rotate(45deg) translateY(-2.5rem);
 }
 
 .card{
@@ -81,6 +138,7 @@ html{
     display: flex;
     align-items: center;
     color: var(--hover-text-color);
+    margin-bottom: 3rem;
 }
 
 .nav-link-test{
@@ -113,6 +171,14 @@ html{
 .sub-nav-list{
     width: 90%;
     margin-left: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s;
+}
+
+.change.sub-nav-list{
+    /* display: contents; */
+    max-height: 10rem;
 }
 
 .sub-nav-item{
@@ -151,6 +217,10 @@ html{
     transform: translateX(-1rem);
 }
 
+.bottom-list-link{
+    position: relative;
+}
+
 .bottom-list-link i{
     font-size: 1.6rem;
     color: var(--secondary-color);
@@ -160,10 +230,27 @@ html{
     color: var(--active-icon-color);
 }
 
+.bottom-list-link span{
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    position: absolute;
+    top: -90%;
+    right: -50%;
+    width: 1.4rem;
+    height: 1.4rem;
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .main-section{
-    width: 85vw;
+    width: 100vw;
     position: relative;
-    left: 15vw;
+    left: 0vw;
 }
 
 .header{
@@ -174,7 +261,7 @@ html{
 .heading{
     position: absolute;
     top: 10%;
-    left: 45%;
-    font-size: 5rem;
+    left: 35%;
+    font-size: 7rem;
     color: rgb(25, 25, 44);
 }
